@@ -1,0 +1,14 @@
+function g = waveformBinary(code,chipRate,sampleRate)
+
+
+
+sampleRate = 2048000;
+foffset = 0;
+[ samples , Fs ] = audioread('C:\Users\Administrator\PycharmProjects\location_HW5\rtlsdr-1575-42.wav');
+ms = 32;
+s = samples (1: ms * sampleRate /1000 ,1) ...
++ sqrt ( -1)* samples (1: ms * sampleRate /1000 ,2);
+SV = 30; % index of space vehicle ( satellite )
+code = (2* cacode ( SV ) -1);
+doppler = -1000;
+% replica = modulator ( 'p' ,g , sampleRate , foffset + doppler );

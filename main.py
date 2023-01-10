@@ -4,11 +4,8 @@ import numpy as np
 import scipy as sp
 # This is a sample Python script.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from scipy.io import wavfile
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 # python for :
 # sampleRate = 2048000;
@@ -20,11 +17,12 @@ def print_hi(name):
 
 
 
-data, samplerate = sf.read('existing_file.wav')
-data, samplerate = sp.io.wavfile.read("somefile")# Press Shift+F10 to execute it or replace it with your code.
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+     samplerate,samples = sp.io.wavfile.read(r"C:\Users\Administrator\PycharmProjects\location_HW5\rtlsdr-1575-42.wav")
+     s = samples[:samplerate*//]
+     ms = 32
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
